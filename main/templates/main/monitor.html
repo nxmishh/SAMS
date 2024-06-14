@@ -1,0 +1,44 @@
+{% extends "main/base.html" %}
+
+{% block title %} 
+    Monitor
+{% endblock %}
+
+{% block content %}  
+<div id="videos">
+<img class="cameraFeed" src="{% url 'video_feed' %}" />
+</div>
+
+<div id="operations">
+    <button id="controlButton" onclick="controlStream()">Start Streaming</button>
+</div>
+
+<script>
+    function controlStream() {
+        var cameraFeeds = document.getElementsByClassName('cameraFeed');
+        var button = document.getElementById('controlButton');
+
+        if (cameraFeeds[0].style.display === "none") {
+            button.textContent = "Stop Stream";
+            for (var i = 0; i < cameraFeeds.length; i++) {
+                cameraFeeds[i].style.display = "block";
+            }
+        } else {
+            button.textContent = "Start Stream";
+            for (var i = 0; i < cameraFeeds.length; i++) {
+                cameraFeeds[i].style.display = "none";
+            }
+        }
+    }
+
+    // Initially hide the camera feed
+    window.onload = function() {
+        var cameraFeeds = document.getElementsByClassName('cameraFeed');
+        for (var i = 0; i < cameraFeeds.length; i++) {
+            cameraFeeds[i].style.display = "none";
+        }
+    }
+</script>   
+{% endblock %}
+
+

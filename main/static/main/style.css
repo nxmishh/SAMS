@@ -1,0 +1,29 @@
+h1{
+  text-align: center;
+}
+
+body{
+  background-image: url("/static/main/army-bgi-1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar-container {
+  width: 100%;
+}
+
+.navbar-nav {
+  width: 100%;
+  display: flex;
+  justify-content: baseline;
+}
+
+.nav-item {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.reduced-width {
+  width: 50%;  
+  margin: 0 auto;  
+}
