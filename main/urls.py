@@ -13,5 +13,5 @@ urlpatterns = [
     path("profile/", views.profile, name='profile'),    
     path('video_feed/', views.video_feed, name='video_feed'),
     path('fetch-csv/', views.fetch_csv, name='fetch_csv'),
-    path('upload/', views.upload_csv, name='upload_csv'),
+    path('upload/', views.upload_csv, name='upload_csv')
 ]

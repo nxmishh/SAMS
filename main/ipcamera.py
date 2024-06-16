@@ -2,7 +2,7 @@ import cv2
 
 class VideoIPCamera(object):
     def __init__(self):
-        self.video = cv2.VideoCapture('http://192.168.63.103:8000/stream')
+        self.video = cv2.VideoCapture('http://192.168.20.103:8000/stream')
     
     def __del__(self):
         self.video.release()

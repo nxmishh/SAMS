@@ -39,7 +39,7 @@
 </body>
 </html>
 {% else %}
-<form method="POST" action="{% url 'login' %}">
+<form method="POST" action="{% url 'login' %}" style="margin-top: 20px;">
     {% csrf_token %}
     <div class="text-center">
         <button type="submit" class="btn btn-primary">Login</button>

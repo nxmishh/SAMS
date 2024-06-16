@@ -1,27 +1,63 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>CSV Records</title>
-</head>
-<body>
-    <h1>CSV Records</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Timestamp</th>
-                <th>Details</th>
-                <th>Alert Message</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for record in records %}
-            <tr>
-                <td>{{ record.timestamp }}</td>
-                <td>{{ record.details }}</td>
-                <td>{{ record.alert_message }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</body>
-</html>
+{% extends 'main/base.html' %}
+
+
+{% block title %} 
+    Records
+{% endblock %}
+
+{% block css %} 
+    <style>
+        .card{
+            padding: 20px;
+            background-color: #000;
+            color: #fff;
+            opacity: 0.8;
+            margin: 0 auto;
+            width: 70%;
+            text-align: center;
+        }
+    
+        .card-title, .card-text{
+            color: #fff;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+    </style>
+{% endblock %}
+
+
+{% block content %}  
+<div class="card" style="margin-top: 50px;">
+    <div class="card-header">
+        <h1>Records</h1>
+    </div>
+    <div class="card-body">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Details</th>
+                    <th>Alert Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in records %}
+                <tr>
+                    <td>{{ record.timestamp }}</td>
+                    <td>{{ record.details }}</td>
+                    <td>{{ record.alert_message }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+

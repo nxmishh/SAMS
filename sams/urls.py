@@ -22,5 +22,4 @@ urlpatterns = [
     path('',include("main.urls")),
     path('base/', include("main.urls")),
     path('login/', include("django.contrib.auth.urls")),
-    path('csv/', include('main.urls')),
 ]

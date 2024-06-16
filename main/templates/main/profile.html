@@ -4,11 +4,49 @@
     Profile
 {% endblock %}
 
+{% block css %}
+    <style>
+        .card{
+            padding: 20px;
+            background-color: #000;
+            opacity: 0.8;
+            margin: 0 auto;
+            width: 70%;
+            text-align: center;
+        }
+        .card-body{
+            color: #fff;
+        }
+    
+        .card-title, .card-text{
+            color: #fff;
+        }
+    </style>
+{% endblock %}
+
 {% block content %}  
-<form method="POST" action="{% url 'logout' %}">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-primary">Logout</button>
-</form>
+<div class="card" style="margin-top: 50px;">
+    <div class="card-body">
+        <h3 class="card-title">User Profile</h3>
+        <br/>
+        <p class="card-text">Welcome to your profile page, {{ user.first_name }} {{ user.last_name }}.</p>
+        <table class="table">
+            <tr>
+                <td>Username</td>
+                <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{ user.email }}</td>
+            </tr>
+        </table>
+        <a href="{% url 'password_change' %}" class="btn btn-primary">Change Password</a>
+        <form method="POST" action="{% url 'logout' %}" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Logout</button>
+        </form>
+    </div>
+</div>
 {% endblock %}
 
 

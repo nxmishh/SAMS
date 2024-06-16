@@ -34,7 +34,7 @@
               <tr class="table-dark">
                 <th scope="row">1</th>
                 <td><p style="color: white;">View History of Alerts </p></td>
-                <td><button type="button" class="btn btn-primary" id="view" onclick="displayRecord()">Display Record</button></td>
+                <td><a class="btn btn-primary" href="{% url 'upload_csv' %}">Display Record</a></td>
               </tr>
               <tr class="table-dark">
                 <th scope="row">2</th>
@@ -45,12 +45,12 @@
           </table>
     </div>
 
-    <div class = "new-records">
+    <div class="new-records" style="background-color: white; opacity: 0.8;">
         <table id="csv-data">
             <thead>
                 <tr>
-                    <th>Time</th>
-                    <th>Alert</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -82,7 +82,7 @@
 
         function displayRecord() {
             $.ajax({
-            url: '{% url "display_csv" %}',
+            url: '{% url "upload_csv" %}',
             type: 'GET',
             success: function(data) {
                 // Display the CSV data in a table
