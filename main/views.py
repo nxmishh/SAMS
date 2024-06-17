@@ -30,7 +30,7 @@ def video_feed(request):
 
 def fetch_csv(request):
     # Replace the URL with the actual URL of the CSV file on your private network
-    url = 'http://192.168.20.103:8000/alerts'
+    url = 'http://192.168.63.103:8000/alerts'
     response = requests.get(url)
 
     # Check if the request was successful
